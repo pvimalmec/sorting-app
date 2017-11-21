@@ -37,7 +37,8 @@ Step 1
 
  Step 2
     To run the application use below command
-      java -jar backend/target/sorting-app.jar   
+      
+        java -jar backend/target/sorting-app.jar   
 
  Step 3
 
