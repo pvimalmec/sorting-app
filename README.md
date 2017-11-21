@@ -33,7 +33,7 @@ Step 1
         ./mvnw clean install
 
         #Windows
-        mvn.bat clean install
+        mvnw.cmd clean install
 
  Step 2
     To run the application use below command
