@@ -1,0 +1,93 @@
+
+
+
+
+<div class="row" style="padding-top: 20px">
+
+	<div class="col-md-12" style="padding-left: 20px; padding-right: 20px">
+		<mat-card>
+		<div class="col-md-9">
+			<mat-form-field class="example-full-width"> <input
+				matInput [(ngModel)]="randomNumbers"
+				placeholder="Please select Generate Button to get Random Number"
+				disabled> </mat-form-field>
+			<button mat-button color="accent" mat-raised-button
+				(click)="getNumbers()">Generate</button>
+			<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+		</div>
+
+		<div *ngIf="randomNumbers" class="row text-center">
+			<div class="col-md-10">
+				<button mat-button color="primary" mat-raised-button
+					(click)="sortNumbers()">Sort Now</button>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+
+		</mat-card>
+
+		<div class="row" style="padding-top: 20px">
+			<div class="col-md-12">
+				<mat-card *ngIf="sortednumbers">
+
+				<div class="row ">
+					<mat-toolbar color="primary"> <span>The Result</span>
+
+
+					</mat-toolbar>
+					<div class="col-md-6" style="padding-top: 30px">
+						<mat-card class="example-card"> <mat-card-header>
+
+						<mat-card-title>Sorted List</mat-card-title> </mat-card-header> <mat-card-content>
+						<p>List Values - {{sortednumbers}}</p>
+						</mat-card-content> </mat-card>
+					</div>
+					<div class="col-md-6" style="padding-top: 30px">
+						<mat-card class="example-card"> <mat-card-header>
+
+						<mat-card-title>Postions</mat-card-title> </mat-card-header> <mat-card-content>
+						<p>No of Position Moved - {{positionchanged}}</p>
+						</mat-card-content> </mat-card>
+					</div>
+					<div class="col-md-10" style="padding-top: 30px">
+						<button mat-button color="primary" mat-raised-button
+							(click)="getHistory()">Show History</button>
+					</div>
+
+				</div>
+
+				</mat-card>
+
+				<mat-card *ngIf="historyInfo">
+
+				<div class="row ">
+					<mat-toolbar color="primary"> <span>The
+						History</span> </mat-toolbar>
+					<div class="col-md-12" style="padding-top: 30px">
+						<mat-card class="col-md-8"> <mat-card-header>
+
+						<mat-card-title>History Of Sorted List</mat-card-title> </mat-card-header> <mat-card-content>
+
+						<mat-list-item *ngFor="let history of historyInfo">
+						<mat-icon mat-list-icon>note</mat-icon>
+						<h4 mat-line>{{history.orderednumbers}}</h4>
+
+						</mat-list-item> </mat-card-content> </mat-card>
+					</div>
+
+				</div>
+
+				</mat-card>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
